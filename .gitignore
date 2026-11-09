@@ -1,0 +1,4 @@
+# JANGAN masuk GitHub: berisi sandi database / kunci API / data server
+config.php
+data/*
+!data/index.html

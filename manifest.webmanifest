@@ -1,0 +1,32 @@
+{
+  "name": "SiPustaka - Perpustakaan SMPN 6 Keritang",
+  "short_name": "SiPustaka",
+  "description": "SiPustaka: kelola buku, eksemplar, dan anggota Perpustakaan SMPN 6 Keritang, dengan Asisten AI",
+  "start_url": "./?p=beranda",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2A2C84",
+  "lang": "id",
+  "icons": [
+    {
+      "src": "aset/ikon2-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "aset/ikon2-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "aset/ikon2-512-mask.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "/"
+}

@@ -1,0 +1,10 @@
+---
+# Dijalankan cPanel saat menekan "Deploy HEAD Commit" (Git Version Control → Manage → Pull or Deploy).
+# Menyalin kode ke folder subdomain kelola. config.php dan isi folder data/ di server TIDAK disentuh.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/bzydmpxm/kelola.otomasismpn6keritang.my.id/
+    - /bin/mkdir -p $DEPLOYPATH/data
+    - /bin/cp -R aset hal inc $DEPLOYPATH
+    - /bin/cp index.php scan.php sw.js manifest.webmanifest offline.html .htaccess $DEPLOYPATH
+    - /bin/cp data/index.html $DEPLOYPATH/data/
