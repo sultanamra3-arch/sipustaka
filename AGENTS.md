@@ -59,6 +59,10 @@ Struktur:
 ## 6b. Masuk dari SiGuru (v1.12)
 - `?p=sso` (boleh tanpa login): menerima `u`, `t`, `n`, `s` dari SiGuru (admin). Tanda tangan HMAC-SHA256 atas `u|t|n` dengan kunci bersama `data/sso-kunci.php` (dibuat otomatis, tidak ikut Git), berlaku 60 detik, sekali pakai (`data/sso-pakai.json`), akun harus ada di tabel `user` SLiMS. Opsi `ke` = pinjaman/buku/anggota. Jangan longgarkan pemeriksaan ini.
 
+## 6c. APK "SiGuru Admin" (v1.13)
+- `.well-known/assetlinks.json` (disalin oleh `.cpanel.yml`) = bukti alamat kelola.* milik APK SiGuru Admin (repo web-guru, folder `android/`). Jangan dihapus/diubah tanpa mengganti APK.
+- Tombol "‹ SiGuru" muncul bila sesi `dari_siguru` (dari `?dari=siguru` atau `?p=sso`). Tanpa efek memantul (`overscroll-behavior:none`).
+
 ## 7. Cara memasang perubahan di website
 Setelah commit & push ke GitHub: cPanel → **Git Version Control** → Manage `sipustaka` → **Pull or Deploy** →
 1. **Update from Remote** (ambil kode terbaru dari GitHub), lalu

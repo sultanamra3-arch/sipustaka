@@ -14,6 +14,8 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: same-origin');
 
 mulai_sesi();
+// dibuka dari SiGuru: tampilkan tombol "‹ SiGuru" di kepala halaman
+if (($_GET['dari'] ?? '') === 'siguru') $_SESSION['dari_siguru'] = true;
 
 $halaman = [
     'masuk', 'keluar', 'beranda',

@@ -35,6 +35,7 @@ function kepala(string $judul, string $aktif = ''): void
 </head>
 <body>
 <header class="atas">
+  <?php if (!empty($_SESSION['dari_siguru'])): ?><a class="ke-siguru" href="<?= h((string)k('url_siguru', 'https://guru.otomasismpn6keritang.my.id/')) ?>?p=beranda" title="Kembali ke SiGuru">‹ SiGuru</a><?php endif; ?>
   <a class="merek" href="?p=beranda"><img src="aset/logo.png" alt="Logo SMPN 6 Keritang"> <span><small>Perpustakaan SMPN 6 Keritang</small><b>SiPustaka</b></span></a>
   <?php if ($u): ?>
   <form method="post" action="?p=keluar" class="keluar"><?= input_token() ?><button title="Keluar">Keluar</button></form>

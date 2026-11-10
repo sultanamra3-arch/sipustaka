@@ -18,5 +18,6 @@ if (!$a) {
     ke('?p=' . (pengguna() ? $ke : 'masuk'));
 }
 session_regenerate_id(true);
+$_SESSION['dari_siguru'] = true;
 $_SESSION['pengguna'] = ['id' => (int)$a['user_id'], 'username' => $a['username'], 'nama' => $a['realname']];
 ke('?p=' . $ke);

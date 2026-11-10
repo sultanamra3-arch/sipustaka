@@ -202,3 +202,7 @@ a.bookmarklet{display:inline-block;cursor:grab;padding:.7rem 1.1rem;background:v
 /* aplikasi terpasang: tanpa zoom ketuk-dua-kali & tanpa zoom otomatis saat mengetik */
 html.apl{touch-action:manipulation;-webkit-text-size-adjust:100%}
 html.apl input,html.apl select,html.apl textarea{font-size:max(16px,1em)}
+
+/* v1.13: tanpa efek memantul + tombol kembali ke SiGuru */
+html,body{overscroll-behavior:none}
+.ke-siguru{flex:none;margin-right:.5rem;padding:.35rem .7rem;border-radius:99px;background:#F2C230;color:#1B1D5E;font-weight:700;text-decoration:none;font-size:.85rem;white-space:nowrap}

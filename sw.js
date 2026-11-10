@@ -1,6 +1,6 @@
 /* Service worker sederhana: simpan berkas tampilan, halaman selalu diambil dari server. */
-const CACHE = 'kelola-v1.12';
-const ASET = ['aset/gaya.css?v=1.12', 'aset/app.js?v=1.12', 'aset/logo.png', 'aset/favicon.png', 'offline.html'];
+const CACHE = 'kelola-v1.13';
+const ASET = ['aset/gaya.css?v=1.13', 'aset/app.js?v=1.13', 'aset/logo.png', 'aset/favicon.png', 'offline.html'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASET)).then(() => self.skipWaiting()));

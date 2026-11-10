@@ -5,7 +5,7 @@ declare(strict_types=1);
 date_default_timezone_set('Asia/Jakarta');
 mb_internal_encoding('UTF-8');
 
-const VERSI = '1.12';
+const VERSI = '1.13';
 
 $GLOBALS['KONFIG'] = require __DIR__ . '/../config.php';
 

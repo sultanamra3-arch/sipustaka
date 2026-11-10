@@ -8,3 +8,5 @@ deployment:
     - /bin/cp -R aset hal inc $DEPLOYPATH
     - /bin/cp index.php scan.php sw.js manifest.webmanifest offline.html .htaccess $DEPLOYPATH
     - /bin/cp data/index.html $DEPLOYPATH/data/
+    - /bin/mkdir -p $DEPLOYPATH/.well-known
+    - /bin/cp .well-known/assetlinks.json $DEPLOYPATH/.well-known/
