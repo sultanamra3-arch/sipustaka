@@ -19,7 +19,7 @@ $halaman = [
     'masuk', 'keluar', 'beranda',
     'buku', 'buku_form', 'buku_detail', 'api_kode',
     'anggota', 'anggota_form', 'anggota_kelas',
-    'pinjaman', 'asisten', 'api_ai', 'pengaturan_ai', 'scanner', 'api_scan',
+    'pinjaman', 'asisten', 'api_ai', 'pengaturan_ai', 'scanner', 'api_scan', 'sso',
 ];
 $p = (string)($_GET['p'] ?? '');
 if (!in_array($p, $halaman, true)) {
@@ -37,7 +37,7 @@ try {
     exit;
 }
 
-if ($p !== 'masuk') wajib_login();
+if ($p !== 'masuk' && $p !== 'sso') wajib_login();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') cek_token();
 
 try {

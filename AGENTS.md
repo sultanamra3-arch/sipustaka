@@ -56,6 +56,9 @@ Struktur:
 - Penyedia: Gemini → Groq → OpenRouter → preset lain. **OpenRouter hanya model `:free`** (jangan sampai memakai kredit).
 - Kunci AI hanya di server (`data/ai-kunci.php`), dipakai bersama dengan SiGuru. Kunci baru diuji dulu sebelum disimpan.
 
+## 6b. Masuk dari SiGuru (v1.12)
+- `?p=sso` (boleh tanpa login): menerima `u`, `t`, `n`, `s` dari SiGuru (admin). Tanda tangan HMAC-SHA256 atas `u|t|n` dengan kunci bersama `data/sso-kunci.php` (dibuat otomatis, tidak ikut Git), berlaku 60 detik, sekali pakai (`data/sso-pakai.json`), akun harus ada di tabel `user` SLiMS. Opsi `ke` = pinjaman/buku/anggota. Jangan longgarkan pemeriksaan ini.
+
 ## 7. Cara memasang perubahan di website
 Setelah commit & push ke GitHub: cPanel → **Git Version Control** → Manage `sipustaka` → **Pull or Deploy** →
 1. **Update from Remote** (ambil kode terbaru dari GitHub), lalu

@@ -387,3 +387,32 @@ function ai_bagian_foto(array $foto, int $maks = 4): array
     }
     return $bagian;
 }
+
+/* ---------- masuk dari SiGuru (v1.12) ---------- */
+/** Kunci bersama SiGuru ↔ SiPustaka (data/sso-kunci.php), dibuat bila belum ada. */
+function sso_kunci(): ?string
+{
+    $f = ai_folder_data() . '/sso-kunci.php';
+    if (!is_file($f)) {
+        @file_put_contents($f, "<?php return '" . bin2hex(random_bytes(32)) . "';\n", LOCK_EX);
+        @chmod($f, 0640);
+    }
+    $k = @include $f;
+    return is_string($k) && strlen($k) >= 32 ? $k : null;
+}
+
+/** Tanda sekali pakai: true bila belum pernah dipakai (disimpan 5 menit). */
+function sso_nonce_baru(string $n): bool
+{
+    $f = ai_folder_data() . '/sso-pakai.json';
+    $fh = @fopen($f, 'c+');
+    if (!$fh) return false;
+    flock($fh, LOCK_EX);
+    $isi = json_decode((string)stream_get_contents($fh), true) ?: [];
+    $isi = array_filter($isi, fn($w) => $w > time() - 300);
+    $baru = !isset($isi[$n]);
+    $isi[$n] = time();
+    ftruncate($fh, 0); rewind($fh); fwrite($fh, json_encode($isi));
+    flock($fh, LOCK_UN); fclose($fh);
+    return $baru;
+}
