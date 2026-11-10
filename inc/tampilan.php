@@ -26,11 +26,11 @@ function kepala(string $judul, string $aktif = ''): void
 <meta name="apple-mobile-web-app-title" content="SiPustaka">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.webmanifest?v=<?= VERSI ?>">
-<link rel="icon" href="aset/favicon.png">
+<link rel="icon" href="aset/favicon.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap">
-<link rel="apple-touch-icon" href="aset/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="aset/apple-touch-icon.png?v=3">
 <link rel="stylesheet" href="aset/gaya.css?v=<?= VERSI ?>">
 </head>
 <body>
